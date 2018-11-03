@@ -1,0 +1,74 @@
+<div class="row">
+ <div class="col-12 mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="header-title text-center">LIST NHÂN VIÊN</h4>
+      <div class="single-table">
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead class="text-uppercase bg-primary">
+              <tr class="text-white">
+                <th scope="col">ID</th>
+                <th scope="col">TÊN</th>
+                <th scope="col">GIỚI TÍNH</th>
+                <th scope="col">ĐỊA CHỈ</th>
+                <th scope="col">TÀI KHOẢN</th>
+                <th scope="col">QUYỀN</th>
+                <th scope="col">XỬ LÝ</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="nv in nhanViens" ng-init="nv.hienThi=true">
+              <tr ng-show="nv.hienThi">
+                <th scope="row">{{nv.id}}</th>
+                <td>{{nv.ten}}</td>
+                <td>{{nv.gioitinh}}</td>
+                <td>{{nv.diachi}}</td>
+                <td>{{nv.tenTaiKhoan}}</td>
+                <td>{{nv.quyen}}</td>
+                <td>
+                  <i class="fa fa-pencil" ng-click="showEdit(nv)" style="padding-right: 13px; cursor: pointer;"></i>
+                  <i class="ti-trash" ng-click="deleteNV(nv.id)"></i>
+                </td>
+                <!-- edit data nhan vien</!-->
+                <tr ng-show="!nv.hienThi" >
+                  <th scope="row">{{nv.id}}</th>
+                  <td> <input type="text" class="form-control" ng-model="nv.ten" minlength="3" maxlength="20" required>
+                  </td>
+                  <td> 
+                    <select class="form-control" ng-model="nv.gioitinh">
+                      <option value="Nam">Nam</option>
+                      <option value="Nữ">Nữ</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" ng-model="nv.diachi" minlength="3" maxlength="40" required>
+                  </td>
+                  <td> 
+                   <input type="text" class="form-control" ng-model="nv.tenTaiKhoan" minlength="3" maxlength="20" required>
+                 </td>
+                 <td>  
+                  <select class="form-control"  ng-model="nv.quyen">
+                    <option value="1">Quản lý Thông tin</option>
+                    <option value="2">Quản lý ĐẶT VÉ</option>
+                    <option value="3">Quản lý Tổng Thể</option>
+                  </select>           
+                </td>
+                <td>
+                  <i class="fa fa-check" ng-click=" editNV(nv)" style="padding-right: 13px; cursor: pointer;"></i> 
+                   <i class="fa fa-close" ng-click="show(nv)" style="cursor: pointer;"></i>                            
+                </td>
+              </tr>
+
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

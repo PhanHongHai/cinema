@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title text-center">Thêm Phim</h4>
+                <form  method="post" name="f1" novalidate>
+                    <div class="form-group">
+                        <label for="exampleInput">Tên Phim</label>
+                        <input type="text" class="form-control" placeholder="Enter name" ng-model="namePhim" minlength="3" maxlength="20" required>                  
+                    </div>
+                    <div class="form-group">
+                        <label >Thể Loại</label>
+                        <select name=gioiTinh  class="form-control" ng-model="idTL">
+                           <option ng-repeat="value in tL" value="{{value.id}}">{{value.tenTL}}</option>
+                        </select>
+                    </div>
+                  <div class="form-group ">
+                    <label >Nội dung</label>
+                    <textarea  type="text" class="form-control" cols="40" rows="5" ng-model="nd" minlength="3" maxlength="40" required></textarea>
+                </div>
+                <div class="form-group ">
+                    <label >Ngày Khởi Chiếu</label>
+                    <input type="date" class="form-control thoiLuong" ng-model="ngayKC" minlength="3" maxlength="20" required>
+                </div>
+                <div class="form-group">
+                    <label >Thời Lượng phim :</label>
+                    <input type="number" class="form-control" ng-model="tlPhim" minlength="3" maxlength="20" required min="50" max="250">
+                </div>
+                 <div class="form-group">
+                    <label >Trailer</label>
+                    <input type="url" class="form-control" ng-model="trailer" minlength="3" maxlength="20" required>
+                </div>
+                 <div class="form-group">
+                    <label >Ảnh Poster</label>
+                    <input type="file" file-input="files" class="form-control-file border" ng-model="poster"  required>
+        
+                </div>
+                <button type="button" class="btn btn-outline-primary nutSubmit" ng-click="addPhim()">THÊM</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
